@@ -1,3 +1,1 @@
-# baekjoon
-
-## golang으로 다시시작
+# baekjoon - go
