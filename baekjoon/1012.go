@@ -5,8 +5,8 @@ import (
 )
 
 var (
-	dx = [4]int{-1, 1, 0, 0} // 상하좌우 방향을 나타내는 배열
-	dy = [4]int{0, 0, -1, 1}
+	dxx = [4]int{-1, 1, 0, 0} // 상하좌우 방향을 나타내는 배열
+	dyy = [4]int{0, 0, -1, 1}
 )
 
 func main() {
@@ -32,7 +32,7 @@ func main() {
 		for i := 0; i < M; i++ {
 			for j := 0; j < N; j++ {
 				if field[i][j] {
-					dfs(field, i, j)
+					dfs2(field, i, j)
 					count++
 				}
 			}
@@ -42,13 +42,13 @@ func main() {
 	}
 }
 
-func dfs(field [][]bool, x, y int) {
+func dfs2(field [][]bool, x, y int) {
 	field[x][y] = false
 
 	for i := 0; i < 4; i++ {
-		nx, ny := x+dx[i], y+dy[i]
+		nx, ny := x+dxx[i], y+dyy[i]
 		if nx >= 0 && ny >= 0 && nx < len(field) && ny < len(field[0]) && field[nx][ny] {
-			dfs(field, nx, ny)
+			dfs2(field, nx, ny)
 		}
 	}
 }
