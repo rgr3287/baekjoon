@@ -1,2 +1,1 @@
 # baekjoon - go
-ct
