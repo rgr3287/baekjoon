@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-var dp [32]int64
+var dps [32]int64
 var sym [32]int64
 
 func main() {
@@ -17,21 +17,21 @@ func tileCode(n int) int64 {
 }
 
 func tile(n int) int64 {
-	if dp[n] != 0 {
-		return dp[n]
+	if dps[n] != 0 {
+		return dps[n]
 	}
 	if n == 1 {
-		dp[1] = 1
-		return dp[1]
+		dps[1] = 1
+		return dps[1]
 	}
 	if n == 2 {
-		dp[2] = 3
-		return dp[2]
+		dps[2] = 3
+		return dps[2]
 	}
 
-	dp[n] = tile(n-1) + 2*tile(n-2)
+	dps[n] = tile(n-1) + 2*tile(n-2)
 
-	return dp[n]
+	return dps[n]
 }
 
 func symmetry(n int) int64 {
