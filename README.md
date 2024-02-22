@@ -1,1 +1,1 @@
-# baekjoon - golang
+# baekjoon - go
